@@ -89,7 +89,7 @@ class ElectronicProduct extends Product {
 
 
 // ================= MAIN CLASS =================
-public class warehouseinventory {
+public class WarehouseInventory {
 
     static Scanner sc = new Scanner(System.in);
 
