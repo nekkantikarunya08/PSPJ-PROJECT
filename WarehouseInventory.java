@@ -6,32 +6,47 @@ public class WarehouseInventory {
 
         Scanner sc = new Scanner(System.in);
 
-        int[] productId = {101, 102, 103, 104, 105};
-        String[] productName = {
-            "Laptop",
-            "Keyboard",
-            "Mouse",
-            "Monitor",
-            "Printer"
-        };
+        // Product details
+        int productId;
+        String productName;
+        double price;
+        int quantity;
 
-        int[] quantity = {15, 8, 25, 4, 12};
-        int[] reorderLevel = {5, 10, 10, 5, 8};
-
+        // Input
         System.out.println("===== WAREHOUSE INVENTORY SYSTEM =====");
 
-        for (int i = 0; i < productId.length; i++) {
+        System.out.print("Enter Product ID: ");
+        productId = sc.nextInt();
 
-            System.out.println("\nProduct ID: " + productId[i]);
-            System.out.println("Product Name: " + productName[i]);
-            System.out.println("Quantity: " + quantity[i]);
-            System.out.println("Reorder Level: " + reorderLevel[i]);
+        sc.nextLine();
 
-            if (quantity[i] <= reorderLevel[i]) {
-                System.out.println("Status: REORDER REQUIRED");
-            } else {
-                System.out.println("Status: Stock Available");
-            }
+        System.out.print("Enter Product Name: ");
+        productName = sc.nextLine();
+
+        System.out.print("Enter Product Price: ");
+        price = sc.nextDouble();
+
+        System.out.print("Enter Quantity: ");
+        quantity = sc.nextInt();
+
+        // Calculations
+        double totalValue = price * quantity;
+
+        double averageValue = totalValue / quantity;
+
+        // Output
+        System.out.println("\n===== INVENTORY DETAILS =====");
+
+        System.out.println("Product ID    : " + productId);
+        System.out.println("Product Name  : " + productName);
+        System.out.println("Price         : " + price);
+        System.out.println("Quantity      : " + quantity);
+        System.out.println("Total Value   : " + totalValue);
+        System.out.println("Average Value : " + averageValue);
+
+        // Relational operator
+        if (quantity > 0) {
+            System.out.println("Stock Status  : Available");
         }
 
         sc.close();
